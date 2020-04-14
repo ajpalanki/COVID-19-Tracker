@@ -27,4 +27,8 @@
   .card {
     margin: 2% 2% !important;
   }
+
+  .newsHeader {
+    font-size: 30px;
+  }
 }

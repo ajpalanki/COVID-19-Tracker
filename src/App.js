@@ -4,6 +4,7 @@ import { Cards, Chart, CountryPicker, News } from './components';
 import styles from './App.module.css';
 import { fetchData, fetchNewsData } from './api';
 import cov19 from './images/COVID-19.png';
+import { Typography } from '@material-ui/core';
 
 class App extends React.Component {
   state = {
@@ -33,14 +34,18 @@ class App extends React.Component {
     return (
       <div className={styles.container}>
         <img className={styles.cov19} src={cov19} alt="COVID-19" />
-        <div>
+        <div className={styles.lastUpdate}>
           <span className={styles.lastUpdatedOn}>Last Updated On: </span>
           {new Date(data.lastUpdate).toString()}
         </div>
-        <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
+        <Cards data={data} />
         <Chart data={data} country={country} className={styles.chart} />
         <News data={newsData} />
+
+        <Typography variant="caption" className={styles.copyright}>
+          &copy; Abhijeet Palanki. All Rights Reserved.
+        </Typography>
       </div>
     );
   }

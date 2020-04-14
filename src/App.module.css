@@ -2,6 +2,11 @@ body {
   background-color: rgb(250, 250, 250);
 }
 
+.lastUpdate {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
 .lastUpdatedOn {
   color: red;
 }
@@ -19,12 +24,24 @@ body {
   margin-bottom: 30px;
 }
 
+.copyright {
+  color: grey;
+}
+
 @media (max-width: 770px) {
   .container {
     margin: 0 10%;
   }
 
   .cov19 {
-    width: 100%;
+    width: 60%;
+  }
+
+  .lastUpdate {
+    font-size: 12px;
+  }
+
+  .copyright {
+    margin-top: 10px !important;
   }
 }
