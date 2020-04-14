@@ -1,6 +1,8 @@
 import axios from 'axios';
 
+const api_key = 'c710b32a3ba24ef8800f06e0fb90158a';
 const url = 'https://covid19.mathdro.id/api/';
+const news_url = `http://newsapi.org/v2/top-headlines?q=coronavirus&apiKey=${api_key}`;
 
 export const fetchData = async (country) => {
   let changeableUrl = url;
@@ -40,7 +42,26 @@ export const fetchCountries = async () => {
     const {
       data: { countries },
     } = await axios.get(`${url}countries`);
-    return countries.map((country) => country.name);
+    return countries;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const fetchNewsData = async (country) => {
+  let changeableUrl = news_url;
+
+  if (country) {
+    changeableUrl = `${news_url}&country=${country}`;
+  } else {
+    changeableUrl = `${news_url}&country=us`;
+  }
+
+  try {
+    const {
+      data: { articles },
+    } = await axios.get(changeableUrl);
+    return { articles };
   } catch (error) {
     console.log(error);
   }
