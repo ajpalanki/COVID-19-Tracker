@@ -16,7 +16,9 @@ const News = ({ newsData: { articles } }) => {
 
   return (
     <React.Fragment>
-      <h1 className={styles.newsHeader}>NEWS UPDATES</h1>
+      {articles !== null ? (
+        <h1 className={styles.newsHeader}>NEWS UPDATES</h1>
+      ) : null}
       <div>
         <Grid container spacing={3} justify="center">
           {articles

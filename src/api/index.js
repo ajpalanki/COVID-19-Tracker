@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-const api_key = 'c710b32a3ba24ef8800f06e0fb90158a';
 const url = 'https://covid19.mathdro.id/api/';
-const news_url = `http://newsapi.org/v2/top-headlines?q=coronavirus&apiKey=${api_key}`;
+const news_url = `http://newsapi.org/v2/top-headlines?q=coronavirus&apiKey=c710b32a3ba24ef8800f06e0fb90158a`;
 
 export const fetchData = async (country) => {
   let changeableUrl = url;
