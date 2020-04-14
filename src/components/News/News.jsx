@@ -9,16 +9,14 @@ import {
   Divider,
 } from '@material-ui/core';
 
-const News = ({ newsData: { articles } }) => {
+const News = ({ data: { articles } }) => {
   if (!articles) {
     return 'Loading...';
   }
 
   return (
     <React.Fragment>
-      {articles !== null ? (
-        <h1 className={styles.newsHeader}>NEWS UPDATES</h1>
-      ) : null}
+      {articles ? <h1 className={styles.newsHeader}>NEWS UPDATES</h1> : null}
       <div>
         <Grid container spacing={3} justify="center">
           {articles
