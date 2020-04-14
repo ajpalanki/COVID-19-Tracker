@@ -23,10 +23,14 @@ class App extends React.Component {
 
   render() {
     const { data, country } = this.state;
-
+    console.log(data);
     return (
       <div className={styles.container}>
         <img className={styles.cov19} src={cov19} alt="COVID-19" />
+        <div>
+          <span className={styles.lastUpdatedOn}>Last Updated On: </span>
+          {new Date(data.lastUpdate).toString()}
+        </div>
         <Cards data={data} />
         <CountryPicker handleCountryChange={this.handleCountryChange} />
         <Chart data={data} country={country} />

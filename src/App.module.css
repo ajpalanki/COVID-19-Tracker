@@ -2,6 +2,10 @@ body {
   background-color: rgb(250, 250, 250);
 }
 
+.lastUpdatedOn {
+  color: red;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -12,6 +16,7 @@ body {
 .cov19 {
   width: 270px;
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 770px) {
