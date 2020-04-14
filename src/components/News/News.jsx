@@ -16,10 +16,12 @@ const News = ({ data: { articles } }) => {
 
   return (
     <React.Fragment>
-      {articles ? <h1 className={styles.newsHeader}>NEWS UPDATES</h1> : null}
+      {articles.length > 0 ? (
+        <h1 className={styles.newsHeader}>NEWS UPDATES</h1>
+      ) : null}
       <div>
         <Grid container spacing={3} justify="center">
-          {articles
+          {articles.length > 0
             ? articles.map((article) => (
                 <Grid
                   key={article.title}
