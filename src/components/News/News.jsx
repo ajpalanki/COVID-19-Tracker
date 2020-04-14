@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core';
 
 const News = ({ data: { articles } }) => {
-  if (!articles) {
+  if (articles === undefined) {
     return 'Loading...';
   }
 
