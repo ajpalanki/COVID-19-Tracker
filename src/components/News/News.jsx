@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './News.module.css';
+import styles from '../../App.module.css';
 import cx from 'classnames';
 import {
   Card,

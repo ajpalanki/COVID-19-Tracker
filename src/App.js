@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Cards, Chart, CountryPicker, News } from './components';
+import { News, Home } from './components';
 import styles from './App.module.css';
 import { fetchData, fetchNewsData } from './api';
 import cov19 from './images/COVID-19.png';
@@ -31,18 +31,16 @@ class App extends React.Component {
 
   render() {
     const { data, newsData, country } = this.state;
+
     return (
       <div className={styles.container}>
         <img className={styles.cov19} src={cov19} alt="COVID-19" />
-        <div className={styles.lastUpdate}>
-          <span className={styles.lastUpdatedOn}>Last Updated On: </span>
-          {new Date(data.lastUpdate).toString()}
-        </div>
-        <CountryPicker handleCountryChange={this.handleCountryChange} />
-        <Cards data={data} />
-        <Chart data={data} country={country} className={styles.chart} />
+        <Home
+          data={data}
+          country={country}
+          handleCountryChange={this.handleCountryChange}
+        />
         <News data={newsData} />
-
         <Typography variant="caption" className={styles.copyright}>
           &copy; Abhijeet Palanki. All Rights Reserved.
         </Typography>
